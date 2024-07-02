@@ -1,0 +1,170 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+#app {
+  display: flex;
+  gap: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.position-controller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.position-controllerButton {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  font-family: "Itim", cursive;
+  font-size: 40px;
+  color: #333333;
+  border: solid #333333 2px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 0 rgb(51 51 51);
+  cursor: pointer;
+}
+
+.position-controllerButton > span {
+  padding-bottom: 8px;
+}
+
+.position-controllerButton-right > span, .position-controllerButton-left > span {
+  display: block;
+  rotate: 90deg;
+}
+
+.buttonList {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+}
+
+.buttonList-item {
+  width: 120px;
+  height: 140px;
+  border: solid #333333 2px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 0 rgb(51 51 51);
+}
+
+.button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 2px 1px #c4c4c4);
+}
+
+.current {
+  border-radius: 2px;
+  outline: solid #fcacf1 3px;
+}
+
+.button-white {
+  filter: drop-shadow(2px 2px 1px #888888);
+}
+
+.button > img {
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  body {
+    display: block;
+    overflow: hidden;
+  }
+
+  #app {
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  #canvas {
+    width: 100vw;
+    height: 100dvh;
+    object-fit: cover;
+  }
+
+  .buttons {
+    position: absolute;
+    top: calc(100dvh - 240px);
+    right: 40px;
+    left: 50%;
+    gap: 20px;
+    width: 100%;
+    transform: translateX(-50%);
+  }
+
+  .position-controller {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .position-controllerButton {
+    width: 60px;
+    height: 60px;
+  }
+
+  .buttonList {
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+  }
+
+  .buttonList-item {
+    width: 80px;
+    height: 100px;
+  }
+
+  .buttonList-item > button > img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  .position-controller {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .position-controllerButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .buttonList {
+    gap: 8px;
+  }
+
+  .buttonList-item {
+    width: 70px;
+    height: 100px;
+  }
+}
